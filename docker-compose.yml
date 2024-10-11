@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5010:5000"
+    volumes:
+      - ./app:/app
+      - ./data:/data
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=app.py
+
+volumes:
+  data:
